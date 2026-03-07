@@ -14,7 +14,7 @@
 
     body {
       font-family: "Times New Roman", Times, serif;
-      background: #fcfaf7;   /* warm off-white, easier on eyes */
+      background: #fcfaf7;
       color: #1a1a1a;
       font-size: 18px;
       line-height: 1.7;
@@ -23,7 +23,6 @@
       padding: 48px 24px;
     }
 
-    /* === TYPOGRAPHY & SPACING === */
     h1, h2, h3 {
       font-weight: normal;
       letter-spacing: -0.01em;
@@ -42,6 +41,11 @@
       margin-bottom: 6px;
     }
 
+    .site-title a {
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
     .site-subtitle {
       font-size: 14px;
       font-style: italic;
@@ -50,7 +54,7 @@
       margin-top: 8px;
     }
 
-    /* === NAVIGATION (clean, underlined hover) === */
+    /* === NAVIGATION === */
     nav {
       margin: 48px 0 40px;
       padding-bottom: 24px;
@@ -77,7 +81,11 @@
       border-bottom: 1px solid #000;
     }
 
-    /* === ARTICLE CARDS (clean separation) === */
+    nav a.active {
+      border-bottom: 1px solid #000;
+    }
+
+    /* === ARTICLE CARDS === */
     article {
       margin-bottom: 64px;
       border-bottom: 1px solid #e2ddd7;
@@ -110,7 +118,7 @@
       color: #2b2b2b;
     }
 
-    /* === READ–MORE SYSTEM (unified style) === */
+    /* === READ–MORE SYSTEM === */
     .full-article {
       display: none;
       margin-top: 28px;
@@ -140,7 +148,7 @@
       opacity: 0.6;
     }
 
-    /* === article text styling (clean, readable) === */
+    /* === ARTICLE TEXT STYLING === */
     h2, h3 {
       margin: 1.8em 0 0.6em;
     }
@@ -167,7 +175,94 @@
       margin-bottom: 0.5em;
     }
 
-    /* === about section (refined) === */
+    hr {
+      border: none;
+      border-top: 1px solid #e0d8d0;
+      margin: 40px 0;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    blockquote {
+      border-left: 3px solid #c7bcb0;
+      padding-left: 22px;
+      margin-left: 10px;
+      font-style: italic;
+      color: #3f3a35;
+    }
+
+    .author-line {
+      margin-top: 40px;
+      font-style: italic;
+      color: #5a5a5a;
+      text-align: right;
+    }
+
+    /* === SHARE BUTTONS === */
+    .article-share {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .share-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #8a7f74;
+    }
+
+    .share-icon {
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .share-icon:hover {
+      opacity: 1;
+    }
+
+    .share-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: #1a1a1a;
+      stroke-width: 2;
+    }
+
+    .footer-share {
+      margin: 40px 0 20px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .footer-share a {
+      color: #5a5a5a;
+      text-decoration: none;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+
+    .footer-share a:hover {
+      color: #1a1a1a;
+    }
+
+    /* === ABOUT SECTION === */
     .about-section {
       margin: 90px 0 40px;
       padding: 44px 0 36px;
@@ -195,7 +290,59 @@
       margin-top: 24px;
     }
 
-    /* === footer (minimal) === */
+    /* === ARCHIVE PAGE (hidden by default) === */
+    .archive-page {
+      display: none;
+    }
+
+    .archive-page.active {
+      display: block;
+    }
+
+    .archive-list {
+      list-style: none;
+      margin: 40px 0;
+    }
+
+    .archive-list li {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .archive-list li:last-child {
+      border-bottom: none;
+    }
+
+    .archive-date {
+      font-size: 13px;
+      color: #8a7f74;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .archive-title {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .archive-title a {
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .archive-title a:hover {
+      text-decoration: underline;
+    }
+
+    .archive-author {
+      font-size: 15px;
+      font-style: italic;
+      color: #6a5f56;
+    }
+
+    /* === FOOTER === */
     footer {
       margin-top: 40px;
       padding-top: 28px;
@@ -205,7 +352,12 @@
       border-top: 1px solid #ddd6cf;
     }
 
-    /* === responsive adjustments === */
+    /* === UTILITY === */
+    .hidden {
+      display: none !important;
+    }
+
+    /* === RESPONSIVE === */
     @media (max-width: 600px) {
       body {
         padding: 32px 18px;
@@ -223,152 +375,104 @@
 
       nav {
         gap: 20px;
-        flex-direction: row;
-        flex-wrap: wrap;
       }
 
       nav a {
-        margin: 0;
         font-size: 13px;
       }
-    }
-
-    /* small additional polish */
-    hr {
-      border: none;
-      border-top: 1px solid #e0d8d0;
-      margin: 40px 0;
-    }90
-
-    em {
-      font-style: italic;
-    }
-
-    strong {
-      font-weight: 600;
-    }
-
-    blockquote {
-      border-left: 3px solid #c7bcb0;
-      padding-left: 22px;
-      margin-left: 10px;
-      font-style: italic;
-      color: #3f3a35;
     }
   </style>
 </head>
 <body>
 
 <header style="text-align: center;">
-  <h1 class="site-title">LANCASTER</h1>
+  <h1 class="site-title"><a href="#" onclick="showNotes(); return false;">LANCASTER</a></h1>
   <div class="site-subtitle">A JOURNAL OF OBSERVATIONS</div>
 </header>
 
 <nav>
-  <a href="#">Notes</a>
-  <a href="#">Archive</a>
-  <a href="#about">About</a>
+  <a href="#" onclick="showNotes(); return false;" id="nav-notes" class="active">Notes</a>
+  <a href="#" onclick="showArchive(); return false;" id="nav-archive">Archive</a>
+  <a href="#about" onclick="showNotes(); return true;">About</a>
 </nav>
 
-<main>
+<!-- MAIN PAGE (NOTES) -->
+<main id="notes-page">
 
-<article>
+  <!-- Emmanuel Story -->
+  <article>
     <div class="article-date">March 7, 2026</div>
     <h2 class="article-title">The Education of Emmanuel: A Hip-Hop Story</h2>
 
     <div class="article-excerpt">
-        <p>Emmanuel—"Geek" to his friends—didn't grow up with hip-hop. For years, music existed somewhere in the background of life, but it wasn't his thing. Not yet.</p>
-        
-        <p>That changed recently. A few years ago, a friend, a hip hop enthusiast told Emmanuel, "Listen to this." Emmanuel nodded, tuned in, and pressed play. The song was by Dizasta Vina. And something clicked.</p>
+      <p>Emmanuel—"Geek" to his friends—didn't grow up with hip-hop. For years, music existed somewhere in the background of life, but it wasn't his thing. Not yet.</p>
+      <p>That changed recently. A few years ago, a friend, a hip hop enthusiast told Emmanuel, "Listen to this." Emmanuel nodded, tuned in, and pressed play. The song was by Dizasta Vina. And something clicked.</p>
     </div>
 
     <div class="full-article" id="full-article-emmanuel">
-        <p>"Started with Dizasta Vina," he'd explain later. "Loved his songs cause of the contents."</p>
-        
-        <p>It wasn't just the beat—it was the words. But Emmanuel couldn't catch every word by ear alone. So he did something that would come to define his entire relationship with hip-hop: he watched the lyrics.</p>
-        
-        <p>On his phone, with the music video playing and subtitles on, he followed every line. If something moved too fast, he paused. Rewound. Watched again.</p>
-        
-        <p>This wasn't passive listening. This was study.</p>
-        
-        <h3>The Immersion</h3>
-        
-        <p>Emmanuel developed a ritual.</p>
-        
-        <p>On Spotify, he'd pull up a song and read the lyrics in real-time as they scrolled. When the platform didn't have lyrics built in, he'd open Genius in another tab and read along there. YouTube became his classroom—music videos with subtitles, paused at every verse he wanted to sit with.</p>
-        
-        <p>"If there are no lyrics on Spotify," he said, "I read them on Genius to understand the song. Yeah, they can get confusing sometimes."</p>
-        
-        <p>His friends thought he was doing homework. In a way, he was.</p>
-        
-        <p>After Dizasta came Kendrick Lamar. Then the floodgates opened.</p>
-        
-        <p>Eminem. J. Cole. NF. Joyner Lucas. Artists who treated words like tools—who built whole worlds inside sixteen bars. Emmanuel absorbed all of it, line by line, with his eyes as much as his ears.</p>
-        
-        <p>He noticed things other listeners missed. The way a rhyme scheme could shift to signal emotional intensity. How a well-placed metaphor could reframe an entire verse. The difference between saying something and saying <em>something</em>.</p>
-        
-        <h3>The Understanding</h3>
-        
-        <p>One night, a friend asked him: "So did hip-hop add something or made you someone?"</p>
-        
-        <p>Emmanuel thought about it. The question deserved an honest answer.</p>
-        
-        <p>"It did to my mind," he wrote. "Changed my mindset. My perspectives about life, success, failure, relationships, and how to deal with... people."</p>
-        
-        <p>He paused, then added:</p>
-        
-        <p>"I see it as informal education. Street education. It helped me see reality, man."</p>
-        
-        <p>The lessons came through in fragments. A Kendrick bar about surviving pressure. An Eminem verse about grinding through criticism. A J. Cole line about staying true when everyone wants you to be something else.</p>
-        
-        <p>Even the funny songs—like Lil Wayne's "Mrs. Officer," which made him laugh out loud—taught him that hip-hop didn't always have to be heavy. Sometimes it could just be human.</p>
-        
-        <p>Emmanuel even tried writing his own bars once. "I got inspired to write some rap," he admitted, laughing, "but I can't write, man!"</p>
-        
-        <p>Still, the impulse mattered. The desire to say something—that came from hip-hop.</p>
-        
-        <h3>The Present</h3>
-        
-        <p>Today, Emmanuel runs his own business. He calls it Raven.</p>
-        
-        <p>Raven is a digital services company—web design, social media management, technical consulting. Emmanuel, the computer geek, building something from nothing. He's quiet by nature, but sharp. Observant. The kind of person who notices details other people miss.</p>
-        
-        <p>People wonder how a guy in his twenties learned to think so strategically—to understand human nature, to navigate complexity, to see the story beneath the surface.</p>
-        
-        <p>The answer lives in his playlist.</p>
-        
-        <p>Every negotiation reminds him of a lyric about reading between lines. Every challenge echoes a bar about perseverance. Every success carries the rhythm of artists who turned their experiences into something real.</p>
-        
-        <h3>The Lesson</h3>
-        
-        <p>"Last thing," Emmanuel said that night, closing the conversation. "It's inspiring and entertaining."</p>
-        
-        <p>Simple words. But behind them was years of listening—really listening—with his eyes on the screen and the words in front of him.</p>
-        
-        <p>The friend on the other end said: "Damn, that's really good, bro. The power of music."</p>
-        
-        <p>Emmanuel didn't reply. He didn't need to.</p>
-        
-        <p>He was probably already back to work—building Raven, one project at a time. Like a rapper in the studio. Like someone who learned that words, when you actually see them, can change everything.</p>
-        
-        <p><em>— Lancaster</em></p>
+      <p>"Started with Dizasta Vina," he'd explain later. "Loved his songs cause of the contents."</p>
+      <p>It wasn't just the beat—it was the words. But Emmanuel couldn't catch every word by ear alone. So he did something that would come to define his entire relationship with hip-hop: he watched the lyrics.</p>
+      <p>On his phone, with the music video playing and subtitles on, he followed every line. If something moved too fast, he paused. Rewound. Watched again.</p>
+      <p>This wasn't passive listening. This was study.</p>
+      
+      <h3>The Immersion</h3>
+      <p>Emmanuel developed a ritual. On Spotify, he'd pull up a song and read the lyrics in real-time as they scrolled. When the platform didn't have lyrics built in, he'd open Genius in another tab and read along there. YouTube became his classroom—music videos with subtitles, paused at every verse he wanted to sit with.</p>
+      <p>"If there are no lyrics on Spotify," he said, "I read them on Genius to understand the song. Yeah, they can get confusing sometimes."</p>
+      <p>His friends thought he was doing homework. In a way, he was.</p>
+      <p>After Dizasta came Kendrick Lamar. Then the floodgates opened. Eminem. J. Cole. NF. Joyner Lucas. Artists who treated words like tools—who built whole worlds inside sixteen bars. Emmanuel absorbed all of it, line by line, with his eyes as much as his ears.</p>
+      <p>He noticed things other listeners missed. The way a rhyme scheme could shift to signal emotional intensity. How a well-placed metaphor could reframe an entire verse. The difference between saying something and saying <em>something</em>.</p>
+      
+      <h3>The Understanding</h3>
+      <p>One night, a friend asked him: "So did hip-hop add something or made you someone?"</p>
+      <p>Emmanuel thought about it. The question deserved an honest answer.</p>
+      <p>"It did to my mind," he wrote. "Changed my mindset. My perspectives about life, success, failure, relationships, and how to deal with... people."</p>
+      <p>He paused, then added: "I see it as informal education. Street education. It helped me see reality, man."</p>
+      <p>The lessons came through in fragments. A Kendrick bar about surviving pressure. An Eminem verse about grinding through criticism. A J. Cole line about staying true when everyone wants you to be something else.</p>
+      <p>Even the funny songs—like Lil Wayne's "Mrs. Officer," which made him laugh out loud—taught him that hip-hop didn't always have to be heavy. Sometimes it could just be human.</p>
+      <p>Emmanuel even tried writing his own bars once. "I got inspired to write some rap," he admitted, laughing, "but I can't write, man!"</p>
+      <p>Still, the impulse mattered. The desire to say something—that came from hip-hop.</p>
+      
+      <h3>The Present</h3>
+      <p>Today, Emmanuel runs his own business. He calls it Raven.</p>
+      <p>Raven is a digital services company—web design, social media management, technical consulting. Emmanuel, the computer geek, building something from nothing. He's quiet by nature, but sharp. Observant. The kind of person who notices details other people miss.</p>
+      <p>People wonder how a guy in his twenties learned to think so strategically—to understand human nature, to navigate complexity, to see the story beneath the surface. The answer lives in his playlist.</p>
+      <p>Every negotiation reminds him of a lyric about reading between lines. Every challenge echoes a bar about perseverance. Every success carries the rhythm of artists who turned their experiences into something real.</p>
+      
+      <h3>The Lesson</h3>
+      <p>"Last thing," Emmanuel said that night, closing the conversation. "It's inspiring and entertaining."</p>
+      <p>Simple words. But behind them was years of listening—really listening—with his eyes on the screen and the words in front of him.</p>
+      <p>The friend on the other end said: "Damn, that's really good, bro. The power of music."</p>
+      <p>Emmanuel didn't reply. He didn't need to.</p>
+      <p>He was probably already back to work—building Raven, one project at a time. Like a rapper in the studio. Like someone who learned that words, when you actually see them, can change everything.</p>
+      
+      <div class="author-line">— Guy Fei</div>
     </div>
 
     <button class="read-more-btn" onclick="toggleArticle(this, 'full-article-emmanuel')">Continue reading →</button>
+    
+    <!-- Native share button for this article -->
+    <div class="article-share">
+      <span class="share-label">Share this article</span>
+      <div class="share-icon" onclick="shareArticle('The Education of Emmanuel: A Hip-Hop Story', 'full-article-emmanuel')">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" stroke="currentColor" stroke-width="2" fill="none"/>
+          <polyline points="16 6 12 2 8 6" stroke="currentColor" stroke-width="2" fill="none"/>
+          <line x1="12" y1="2" x2="12" y2="15" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
   </article>
 
-  <!-- ARTICLE 1 – The Unclaimed Salary -->
+  <!-- The Unclaimed Salary -->
   <article>
     <div class="article-date">January 31, 2026</div>
     <h2 class="article-title">The Unclaimed Salary: Why Tanzania Isn't Learning Chinese</h2>
     <div class="article-excerpt">
-      <p>In Kibaha’s industrial zone, a factory manager’s WhatsApp message pulses with quiet frustration: <em>"Bado hajapatikana mtu."</em> The position? Chinese translator and trainer. The salary? A net 1.3–1.5 million Tanzanian shillings monthly. The requirement? Functional Mandarin and Microsoft Office.</p>
-      <p>A year ago, a similar notice hung in Dar es salaam. The deadline passed. The position, I’m told, was filled only after months of searching.</p>
-      <p>This isn’t an isolated vacancy. It’s a symptom of a clear, persistent gap in Tanzania’s skills market…</p>
+      <p>In Kibaha's industrial zone, a factory manager's WhatsApp message pulses with quiet frustration: <em>"Bado hajapatikana mtu."</em> The position? Chinese translator and trainer. The salary? A net 1.3–1.5 million Tanzanian shillings monthly. The requirement? Functional Mandarin and Microsoft Office.</p>
+      <p>A year ago, a similar notice hung in Dar es salaam. The deadline passed. The position, I'm told, was filled only after months of searching.</p>
     </div>
     <div class="full-article" id="full-article-1">
-      <p>On one side: a growing wave of Chinese industrial investment creating steady demand for linguistic and cultural bridges. On the other: a workforce educated in a system that hasn’t yet pivoted to meet this new economic reality.</p>
-
+      <p>On one side: a growing wave of Chinese industrial investment creating steady demand for linguistic and cultural bridges. On the other: a workforce educated in a system that hasn't yet pivoted to meet this new economic reality.</p>
       <h3>The Mismatch Between Perception and Reality</h3>
       <p>The core misunderstanding lies in what the job actually requires. These postings are not seeking scholars of classical Chinese literature. They need <strong>functional facilitators</strong>.</p>
       <ul>
@@ -376,31 +480,38 @@
         <li><strong>Operational Training:</strong> Explaining processes, safety protocols, and machine instructions.</li>
         <li><strong>Administrative Bridgework:</strong> Using Excel and Word to document procedures and smooth communication.</li>
       </ul>
-      <p>This is vocational, not academic. It’s closer to a specialized technical skill than a humanities degree. Yet, the prospect of learning Mandarin is instantly categorized as <em>"immensely difficult, lifelong pursuit"</em>, overshadowing the more attainable goal of <strong>industry-specific language acquisition</strong>.</p>
-
+      <p>This is vocational, not academic. It's closer to a specialized technical skill than a humanities degree. Yet, the prospect of learning Mandarin is instantly categorized as <em>"immensely difficult, lifelong pursuit"</em>, overshadowing the more attainable goal of <strong>industry-specific language acquisition</strong>.</p>
       <h3>The Allure of the Known Path</h3>
       <p>A three‑year degree — in Business, Public Administration, Sociology — carries recognized social weight. It feels like a key that fits many locks, even if those locks open to crowded fields with salaries half of what the factory offers. Learning Chinese for a factory job feels like forging a single, specific key. The perceived risk is higher: <em>What if I invest time and the industry changes?</em></p>
-
       <h3>An Unseen Educational Gap</h3>
-      <p>Where does one go to learn “Industrial Chinese for Tanzanian Contexts”? Universities offer broad academic tracks; private classes are generic. There is a missing layer of <strong>practical, accelerated, industry-focused training</strong> that could produce a job‑ready candidate in 12‑18 months.</p>
-
+      <p>Where does one go to learn "Industrial Chinese for Tanzanian Contexts"? Universities offer broad academic tracks; private classes are generic. There is a missing layer of <strong>practical, accelerated, industry-focused training</strong> that could produce a job‑ready candidate in 12‑18 months.</p>
       <h3>The Real Cost of the Status Quo</h3>
       <ol>
         <li>Operational inefficiency due to communication barriers.</li>
         <li>Missed managerial roles for Tanzanians who could oversee Sino-Tanzanian operations.</li>
         <li>Stagnant wages for those who default to traditional tracks with lower pay.</li>
       </ol>
-      <p>The Chinese industrial presence isn't a passing trend. It’s a segment building infrastructure, establishing factories, and demanding a specific hybrid professional: the <strong>practical linguist‑operations specialist</strong>.</p>
-
+      <p>The Chinese industrial presence isn't a passing trend. It's a segment building infrastructure, establishing factories, and demanding a specific hybrid professional: the <strong>practical linguist‑operations specialist</strong>.</p>
       <h3>Conclusion: A Pragmatic Opportunity</h3>
-      <p>This isn’t a call for everyone to learn Chinese. It’s a case study in <strong>economic signal reading</strong>. The market clearly signals demand for a skill set, backed by strong compensation. The barrier isn't just the language difficulty; it's the lack of a visible, efficient pipeline. For educational entrepreneurs, the signal is an opportunity. For young professionals, it’s a prompt to look toward <strong>specific, high-demand competencies</strong>.</p>
+      <p>This isn't a call for everyone to learn Chinese. It's a case study in <strong>economic signal reading</strong>. The market clearly signals demand for a skill set, backed by strong compensation. The barrier isn't just the language difficulty; it's the lack of a visible, efficient pipeline. For educational entrepreneurs, the signal is an opportunity. For young professionals, it's a prompt to look toward <strong>specific, high-demand competencies</strong>.</p>
       <p>The factory in Kibaha will find its translator eventually. But the repeated urgent postings suggest a simple truth: the workforce that adapts first to the economy that <em>exists</em> will find its rewards waiting.</p>
-      <p><em>— Lancaster</em></p>
+      <div class="author-line">— Guy Fei</div>
     </div>
     <button class="read-more-btn" onclick="toggleArticle(this, 'full-article-1')">Continue reading →</button>
+    
+    <div class="article-share">
+      <span class="share-label">Share this article</span>
+      <div class="share-icon" onclick="shareArticle('The Unclaimed Salary: Why Tanzania Isn\'t Learning Chinese', 'full-article-1')">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" stroke="currentColor" stroke-width="2" fill="none"/>
+          <polyline points="16 6 12 2 8 6" stroke="currentColor" stroke-width="2" fill="none"/>
+          <line x1="12" y1="2" x2="12" y2="15" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
   </article>
 
-  <!-- ARTICLE 2 – The Silent Engine: On Taxes -->
+  <!-- The Silent Engine: On Taxes -->
   <article>
     <div class="article-date">February 10, 2025</div>
     <h2 class="article-title">The Silent Engine: On Taxes and What Binds Nations</h2>
@@ -408,50 +519,114 @@
       <p>Every morning, as the sun rises over Dar es Salaam, a silent transaction occurs. It is not in the tea stalls nor the markets, but in the digital ledgers of the Tanzania Revenue Authority. A percentage of a shop's daily sales, a fraction of a salary, a slice of corporate profit—all flowing into a collective reservoir most will never see. This is not a modern invention. The pharaohs collected grain. Medieval kings demanded a tithe. The history of civilization is, in part, a history of this mandatory contribution: the tax.</p>
     </div>
     <div class="full-article" id="full-article-2">
-      <p>The TRA, like all modern revenue authorities, is more than a collector; it is the circulatory system of the state. It translates economic activity into public capability. That tarmac road, that public school teacher’s salary, the satellite monitoring the coastline—these are not spontaneous gifts. They are converted taxes. The authority’s importance is not merely functional but existential; it is the mechanism that transforms a geographic territory with people in it into a nation with public goods.</p>
+      <p>The TRA, like all modern revenue authorities, is more than a collector; it is the circulatory system of the state. It translates economic activity into public capability. That tarmac road, that public school teacher's salary, the satellite monitoring the coastline—these are not spontaneous gifts. They are converted taxes. The authority's importance is not merely functional but existential; it is the mechanism that transforms a geographic territory with people in it into a nation with public goods.</p>
       <p>Could a country survive without this body? One could imagine a society funded entirely by natural resource windfalls—a petro-state living off geological luck. But this replaces the tax collector with the commodity broker and ties national survival to global price swings. The purely charitable or fee-based model: you pay for the services you use, like a national subscription. Yet, who builds the road to the isolated village that cannot afford the 'subscription'? The concept of <em>public</em> good collapses into a marketplace of private affordability.</p>
       <p>The junction, then, is not about the necessity of the mechanism—some form of collective funding is inevitable for collective life. The junction is about the <strong>conversion rate</strong>. It is about what happens in the space between the payment and the pavement. Is it efficient? Is it just? The taxpayer, from street vendor to CEO, is a stakeholder. The true test of any revenue authority is not in the amounts it collects, but in the legitimacy it earns.</p>
+      <div class="author-line">— Guy Fei</div>
     </div>
     <button class="read-more-btn" onclick="toggleArticle(this, 'full-article-2')">Continue reading →</button>
+    
+    <div class="article-share">
+      <span class="share-label">Share this article</span>
+      <div class="share-icon" onclick="shareArticle('The Silent Engine: On Taxes and What Binds Nations', 'full-article-2')">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" stroke="currentColor" stroke-width="2" fill="none"/>
+          <polyline points="16 6 12 2 8 6" stroke="currentColor" stroke-width="2" fill="none"/>
+          <line x1="12" y1="2" x2="12" y2="15" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
   </article>
 
-  <!-- ARTICLE 3 – The Simple Secrets of History's Greatest Leaders (clean version) -->
+  <!-- The Simple Secrets of History's Greatest Leaders -->
   <article>
     <div class="article-date">January 21, 2026</div>
     <h2 class="article-title">The Simple Secrets of History's Greatest Leaders</h2>
     <div class="article-excerpt">
-      <p>We imagine great leaders as monumental figures, set apart by charisma or destiny. Yet, the truth is simpler. Leaders like Winston Churchill, Nelson Mandela, and Queen Elizabeth I wielded profound influence not through superhuman traits, but by mastering fundamental human principles—principles perfectly outlined in Dale Carnegie’s <em>How to Win Friends and Influence People</em>.</p>
-      <p>Their tactics weren't complex strategies reserved for the elite; they were deliberate applications of genuine human connection. Their real power lay in making people <strong>feel valued, understood, and inspired</strong>—one person at a time.</p>
+      <p>We imagine great leaders as monumental figures, set apart by charisma or destiny. Yet, the truth is simpler. Leaders like Winston Churchill, Nelson Mandela, and Queen Elizabeth I wielded profound influence not through superhuman traits, but by mastering fundamental human principles—principles perfectly outlined in Dale Carnegie's <em>How to Win Friends and Influence People</em>.</p>
     </div>
     <div class="full-article" id="full-article-3">
-      <p>Churchill, during Britain’s darkest hours, didn’t just give orders. He remembered names, acknowledged personal sacrifices, and framed the war effort as a <em>shared, honorable struggle</em>. He made every citizen feel like a crucial part of the story. This is Carnegie’s principle of <strong>giving honest and sincere appreciation</strong> and <strong>making the other person feel important</strong>—on a national scale.</p>
-      <p>Nelson Mandela disarmed his jailers and later a divided nation by practicing <strong>seeing things from the other person’s point of view</strong>. After 27 years in prison, he sought to understand the fears of white South Africans, addressing them not with blame but with respect. He used “yes, and” instead of “but,” building bridges from common ground.</p>
-      <p>Even Queen Elizabeth I, during the Spanish Armada crisis, used what Carnegie calls <strong>“arousing an eager want.”</strong> She famously aligned her personal safety with her troops: <em>“I myself will take up arms… I will be your general.”</em> She translated a royal need into a common, passionate desire.</p>
+      <p>Churchill, during Britain's darkest hours, didn't just give orders. He remembered names, acknowledged personal sacrifices, and framed the war effort as a <em>shared, honorable struggle</em>. He made every citizen feel like a crucial part of the story. This is Carnegie's principle of <strong>giving honest and sincere appreciation</strong> and <strong>making the other person feel important</strong>—on a national scale.</p>
+      <p>Nelson Mandela disarmed his jailers and later a divided nation by practicing <strong>seeing things from the other person's point of view</strong>. After 27 years in prison, he sought to understand the fears of white South Africans, addressing them not with blame but with respect. He used "yes, and" instead of "but," building bridges from common ground.</p>
+      <p>Even Queen Elizabeth I, during the Spanish Armada crisis, used what Carnegie calls <strong>"arousing an eager want."</strong> She famously aligned her personal safety with her troops: <em>"I myself will take up arms… I will be your general."</em> She translated a royal need into a common, passionate desire.</p>
       <p>The pattern is clear. Great leadership is built with humble bricks: remembering a name, offering sincere praise, listening first. These leaders were masters of a simple truth: <strong>people will follow those who make them feel heard, respected, and part of something meaningful.</strong></p>
       <p>Their genius was applying the basics of human influence with immense consistency. They proved that to move millions, you start by authentically connecting with one.</p>
-      <p><em>— Lancaster</em></p>
+      <div class="author-line">— Guy Fei</div>
     </div>
     <button class="read-more-btn" onclick="toggleArticle(this, 'full-article-3')">Continue reading →</button>
+    
+    <div class="article-share">
+      <span class="share-label">Share this article</span>
+      <div class="share-icon" onclick="shareArticle('The Simple Secrets of History\'s Greatest Leaders', 'full-article-3')">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" stroke="currentColor" stroke-width="2" fill="none"/>
+          <polyline points="16 6 12 2 8 6" stroke="currentColor" stroke-width="2" fill="none"/>
+          <line x1="12" y1="2" x2="12" y2="15" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
   </article>
 
-  <!-- ABOUT SECTION (id for hash) -->
+  <!-- ABOUT SECTION -->
   <section id="about" class="about-section">
     <h2 class="about-title">ABOUT LANCASTER</h2>
     <p class="about-text">
       Lancaster is a personal journal of observations, ideas, and fragments. 
       No marketing. No bullshit. Just thoughts that don't fit elsewhere.
+      <br><br>
+      <em>Editor: Guy Fei</em>
     </p>
     <p class="about-signature">Started in 2025. Updated whenever.</p>
   </section>
+
+  <!-- Footer share icons (whole site) -->
+  <div class="footer-share">
+    <a href="#" onclick="shareViaWhatsApp(); return false;">WhatsApp</a>
+    <a href="#" onclick="shareViaTwitter(); return false;">Twitter</a>
+    <a href="#" onclick="shareViaEmail(); return false;">Email</a>
+  </div>
 </main>
 
+<!-- ARCHIVE PAGE (hidden by default) -->
+<div id="archive-page" class="archive-page">
+  <h2 style="font-size: 32px; margin-bottom: 30px; font-weight: 400;">Archive</h2>
+  
+  <ul class="archive-list">
+    <li>
+      <div class="archive-date">March 7, 2026</div>
+      <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('emmanuel'); return false;">The Education of Emmanuel: A Hip-Hop Story</a></div>
+      <div class="archive-author">Guy Fei</div>
+    </li>
+    <li>
+      <div class="archive-date">January 31, 2026</div>
+      <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('unclaimed'); return false;">The Unclaimed Salary: Why Tanzania Isn't Learning Chinese</a></div>
+      <div class="archive-author">Guy Fei</div>
+    </li>
+    <li>
+      <div class="archive-date">January 21, 2026</div>
+      <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('leaders'); return false;">The Simple Secrets of History's Greatest Leaders</a></div>
+      <div class="archive-author">Guy Fei</div>
+    </li>
+    <li>
+      <div class="archive-date">February 10, 2025</div>
+      <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('taxes'); return false;">The Silent Engine: On Taxes and What Binds Nations</a></div>
+      <div class="archive-author">Guy Fei</div>
+    </li>
+  </ul>
+  
+  <div class="footer-share">
+    <a href="#" onclick="shareViaWhatsApp(); return false;">WhatsApp</a>
+    <a href="#" onclick="shareViaTwitter(); return false;">Twitter</a>
+    <a href="#" onclick="shareViaEmail(); return false;">Email</a>
+  </div>
+</div>
+
 <footer>
-  <p>© 2025 LANCASTER — A journal of observations</p>
-  <p style="margin-top: 6px; font-size: 13px; color: #a89e94;"></p>
+  <p>© 2026 LANCASTER · Edited by Guy Fei</p>
 </footer>
 
-<!-- SIMPLE TOGGLE SCRIPT (works for all articles) -->
 <script>
+  // Toggle read more/less
   function toggleArticle(btn, fullArticleId) {
     var fullDiv = document.getElementById(fullArticleId);
     if (fullDiv.style.display === "none" || fullDiv.style.display === "") {
@@ -463,22 +638,96 @@
     }
   }
 
-  // On page load, ensure all full-article sections are hidden and buttons correct.
+  // Native share for individual articles
+  function shareArticle(title, articleId) {
+    if (navigator.share) {
+      navigator.share({
+        title: title,
+        text: 'Read this on LANCASTER',
+        url: window.location.href + '#' + articleId,
+      })
+      .catch(console.error);
+    } else {
+      // Fallback for browsers that don't support native share
+      shareViaWhatsApp(title);
+    }
+  }
+
+  // Footer share functions (whole site)
+  function shareViaWhatsApp(title) {
+    const text = title ? `Check this out on LANCASTER: ${title}` : 'Check out LANCASTER — a journal of observations';
+    const url = window.location.href;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
+  }
+
+  function shareViaTwitter() {
+    const text = 'LANCASTER — a journal of observations';
+    const url = window.location.href;
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+  }
+
+  function shareViaEmail() {
+    const subject = 'LANCASTER';
+    const body = 'Check out LANCASTER — a journal of observations\n\n' + window.location.href;
+    window.open(`mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+  }
+
+  // Navigation
+  function showNotes() {
+    document.getElementById('notes-page').style.display = 'block';
+    document.getElementById('archive-page').classList.remove('active');
+    document.getElementById('archive-page').style.display = 'none';
+    
+    document.getElementById('nav-notes').classList.add('active');
+    document.getElementById('nav-archive').classList.remove('active');
+    
+    window.scrollTo(0, 0);
+  }
+
+  function showArchive() {
+    document.getElementById('notes-page').style.display = 'none';
+    document.getElementById('archive-page').style.display = 'block';
+    document.getElementById('archive-page').classList.add('active');
+    
+    document.getElementById('nav-notes').classList.remove('active');
+    document.getElementById('nav-archive').classList.add('active');
+    
+    window.scrollTo(0, 0);
+  }
+
+  // Scroll to specific article from archive
+  function scrollToArticle(article) {
+    // Small delay to ensure notes page is visible
+    setTimeout(() => {
+      const articles = document.getElementsByTagName('article');
+      if (articles.length > 0) {
+        articles[0].scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  }
+
+  // Initialize on load
   window.addEventListener('DOMContentLoaded', function () {
-    var buttons = document.querySelectorAll('.read-more-btn');
-    buttons.forEach(function (btn) {
-      // extract article id from onclick? easier: set initial display of all full-article to none.
-    });
+    // Hide all full articles
     var fullArticles = document.querySelectorAll('.full-article');
     fullArticles.forEach(function (el) {
       el.style.display = 'none';
     });
+    
+    // Show notes page, hide archive
+    document.getElementById('notes-page').style.display = 'block';
+    document.getElementById('archive-page').style.display = 'none';
+    
+    // Handle hash links
+    if (window.location.hash === '#about') {
+      // Already handled by normal link
+    }
   });
 </script>
 
-<!-- extra safety: hide full articles if script runs after load (they start hidden via style, but we override with js) -->
 <style>
   .full-article { display: none; }
+  #archive-page { display: none; }
 </style>
 
 </body>
