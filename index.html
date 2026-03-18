@@ -23,6 +23,7 @@
       max-width: 800px;
       margin: 0 auto;
       padding: 48px 24px;
+      position: relative;
     }
 
     h1, h2, h3 {
@@ -56,8 +57,98 @@
       margin-top: 8px;
     }
 
-    /* === NAVIGATION === */
-    nav {
+    /* === HAMBURGER MENU === */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      z-index: 1000;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 30px;
+      height: 2px;
+      background: #1a1a1a;
+      margin: 6px 0;
+      transition: 0.3s;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 280px;
+      height: 100vh;
+      background: #fcfaf7;
+      border-left: 1px solid #dad6d0;
+      padding: 100px 30px;
+      transition: right 0.3s ease;
+      z-index: 999;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.05);
+    }
+
+    .side-menu.active {
+      right: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      color: #2a2a2a;
+      text-decoration: none;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      padding: 15px 0;
+      border-bottom: 1px solid #e2ddd7;
+      transition: color 0.15s;
+    }
+
+    .side-menu a:hover {
+      color: #000;
+    }
+
+    .side-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      z-index: 998;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* === NAVIGATION (desktop) === */
+    .desktop-nav {
       margin: 48px 0 40px;
       padding-bottom: 24px;
       border-bottom: 1px solid #dad6d0;
@@ -67,7 +158,7 @@
       justify-content: center;
     }
 
-    nav a {
+    .desktop-nav a {
       color: #2a2a2a;
       text-decoration: none;
       font-size: 15px;
@@ -78,12 +169,12 @@
       transition: border-color 0.15s, color 0.15s;
     }
 
-    nav a:hover {
+    .desktop-nav a:hover {
       color: #000;
       border-bottom: 1px solid #000;
     }
 
-    nav a.active {
+    .desktop-nav a.active {
       border-bottom: 1px solid #000;
     }
 
@@ -264,6 +355,69 @@
       color: #1a1a1a;
     }
 
+    /* === CONTRIBUTE PAGE === */
+    .contribute-page {
+      display: none;
+    }
+
+    .contribute-page.active {
+      display: block;
+    }
+
+    .page-title {
+      font-size: 42px;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .contribute-box {
+      margin: 50px 0;
+      padding: 40px;
+      background: #f5f0eb;
+      border-left: 4px solid #1a1a1a;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #fcfaf7;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 18px;
+      letter-spacing: 1px;
+      margin: 20px 0;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .whatsapp-button:hover {
+      opacity: 0.8;
+    }
+
+    .contribute-guidelines ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contribute-guidelines li {
+      margin-bottom: 15px;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .contribute-guidelines li span {
+      position: absolute;
+      left: 0;
+    }
+
+    .credit-option {
+      margin: 30px 0;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e2ddd7;
+    }
+
     /* === ABOUT SECTION === */
     .about-section {
       margin: 90px 0 40px;
@@ -292,7 +446,7 @@
       margin-top: 24px;
     }
 
-    /* === ARCHIVE PAGE (hidden by default) === */
+    /* === ARCHIVE PAGE === */
     .archive-page {
       display: none;
     }
@@ -360,43 +514,67 @@
     }
 
     /* === RESPONSIVE === */
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
       body {
         padding: 32px 18px;
-        font-size: 17px;
       }
 
       .site-title {
         font-size: 46px;
-        letter-spacing: 2px;
       }
 
       .article-title {
         font-size: 30px;
       }
+    }
 
-      nav {
-        gap: 20px;
-      }
-
-      nav a {
-        font-size: 13px;
+    @media (min-width: 769px) {
+      .menu-toggle, .side-menu, .menu-overlay {
+        display: none !important;
       }
     }
   </style>
 </head>
 <body>
 
+<!-- Hamburger Menu Button -->
+<button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<!-- Side Menu -->
+<div class="side-menu" id="sideMenu">
+  <a href="#" onclick="showNotes(); closeMenu(); return false;">Notes</a>
+  <a href="#" onclick="showArchive(); closeMenu(); return false;">Archive</a>
+  <a href="#" onclick="showContribute(); closeMenu(); return false;">Contribute</a>
+  <a href="#about" onclick="showNotes(); closeMenu(); return true;">About</a>
+</div>
+
+<!-- Menu Overlay -->
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+<!-- Desktop Navigation -->
+<div class="desktop-nav">
+  <a href="#" onclick="showNotes(); return false;" id="nav-notes" class="active">Notes</a>
+  <a href="#" onclick="showArchive(); return false;" id="nav-archive">Archive</a>
+  <a href="#" onclick="showContribute(); return false;" id="nav-contribute">Contribute</a>
+  <a href="#about" onclick="showNotes(); return true;">About</a>
+</div>
+
 <header style="text-align: center;">
   <h1 class="site-title"><a href="#" onclick="showNotes(); return false;">LANCASTER</a></h1>
   <div class="site-subtitle">A JOURNAL OF OBSERVATIONS</div>
 </header>
-
-<nav>
-  <a href="#" onclick="showNotes(); return false;" id="nav-notes" class="active">Notes</a>
-  <a href="#" onclick="showArchive(); return false;" id="nav-archive">Archive</a>
-  <a href="#about" onclick="showNotes(); return true;">About</a>
-</nav>
 
 <!-- MAIN PAGE (NOTES) -->
 <main id="notes-page">
@@ -1139,7 +1317,7 @@
   </div>
 </main>
 
-<!-- ARCHIVE PAGE (hidden by default) -->
+<!-- ARCHIVE PAGE -->
 <div id="archive-page" class="archive-page">
   <h2 style="font-size: 32px; margin-bottom: 30px; font-weight: 400;">Archive</h2>
   
@@ -1193,6 +1371,61 @@
   </div>
 </div>
 
+<!-- CONTRIBUTE PAGE -->
+<div id="contribute-page" class="contribute-page">
+  <h2 class="page-title">CONTRIBUTE TO LANCASTER</h2>
+  
+  <div class="contribute-intro">
+    <p>This journal is open to voices in my circle.</p>
+    
+    <p>If you have something to say—a story, a poem, an observation that bothers you, a memory that won't leave, an opinion that needs air—send it to me.</p>
+    
+    <p>I'll edit lightly. Just enough to make it read clean. Your voice stays yours.</p>
+  </div>
+  
+  <!-- WhatsApp direct link - number hidden but functional -->
+  <div class="contribute-box">
+    <h3 style="margin-top: 0; font-size: 24px;">Send your words here</h3>
+    <a href="https://wa.me/255759968552" class="whatsapp-button" target="_blank">Open WhatsApp →</a>
+    <p style="font-size: 14px; color: #7b6e64; margin-top: 10px;">(Clicking the button opens WhatsApp directly)</p>
+  </div>
+  
+  <!-- Credit option section -->
+  <div class="credit-option">
+    <h3 style="margin-top: 0;">About credit</h3>
+    <p>When you send something, I'll ask: <strong>Do you want your name on it, or anonymous?</strong></p>
+    <p>If you want credit, tell me what name to use. If you want it anonymous, that's fine too. The work matters more than the name.</p>
+    <p style="font-style: italic; margin-top: 20px;">— Guy Fei</p>
+  </div>
+  
+  <div class="contribute-guidelines">
+    <h3>No rules, but a few questions:</h3>
+    <ul>
+      <li><span>→</span> <strong>Is it real?</strong> Doesn't have to be true, but does it feel true?</li>
+      <li><span>→</span> <strong>Does it matter to you?</strong> If it matters to you, it'll matter to someone.</li>
+      <li><span>→</span> <strong>Would you say it out loud?</strong> Write like you talk.</li>
+    </ul>
+  </div>
+  
+  <div class="contribute-examples" style="margin-top: 50px;">
+    <h3>What's worked before:</h3>
+    <p><em>The Education of Emmanuel</em> — started as a WhatsApp conversation about how someone listens to music differently.</p>
+    <p><em>Surrealism</em> — one person's obsession with Dalí, written down.</p>
+    <p><em>The Late Adopter's Advantage</em> — watching Kariakoo and San Francisco in the same day.</p>
+    <p style="margin-top: 30px;">You don't need to write like me. Write like you.</p>
+  </div>
+  
+  <div class="contribute-footer" style="margin: 60px 0 30px; padding-top: 30px; border-top: 1px solid #ddd;">
+    <p style="font-style: italic;">— Guy Fei</p>
+  </div>
+  
+  <div class="footer-share">
+    <a href="#" onclick="shareViaWhatsApp(); return false;">WhatsApp</a>
+    <a href="#" onclick="shareViaTwitter(); return false;">Twitter</a>
+    <a href="#" onclick="shareViaEmail(); return false;">Email</a>
+  </div>
+</div>
+
 <footer>
   <p>© 2026 LANCASTER · Edited by Guy Fei</p>
 </footer>
@@ -1220,12 +1453,11 @@
       })
       .catch(console.error);
     } else {
-      // Fallback for browsers that don't support native share
       shareViaWhatsApp(title);
     }
   }
 
-  // Footer share functions (whole site)
+  // Footer share functions
   function shareViaWhatsApp(title) {
     const text = title ? `Check this out on LANCASTER: ${title}` : 'Check out LANCASTER — a journal of observations';
     const url = window.location.href;
@@ -1244,32 +1476,68 @@
     window.open(`mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
   }
 
+  // Menu functions
+  function toggleMenu() {
+    document.getElementById('sideMenu').classList.toggle('active');
+    document.getElementById('menuOverlay').classList.toggle('active');
+    document.getElementById('menuToggle').classList.toggle('active');
+  }
+
+  function closeMenu() {
+    document.getElementById('sideMenu').classList.remove('active');
+    document.getElementById('menuOverlay').classList.remove('active');
+    document.getElementById('menuToggle').classList.remove('active');
+  }
+
   // Navigation
   function showNotes() {
     document.getElementById('notes-page').style.display = 'block';
     document.getElementById('archive-page').classList.remove('active');
-    document.getElementById('archive-page').style.display = 'none';
+    document.getElementById('contribute-page').classList.remove('active');
     
     document.getElementById('nav-notes').classList.add('active');
     document.getElementById('nav-archive').classList.remove('active');
+    
+    if (document.getElementById('nav-contribute')) {
+      document.getElementById('nav-contribute').classList.remove('active');
+    }
     
     window.scrollTo(0, 0);
   }
 
   function showArchive() {
     document.getElementById('notes-page').style.display = 'none';
-    document.getElementById('archive-page').style.display = 'block';
     document.getElementById('archive-page').classList.add('active');
+    document.getElementById('contribute-page').classList.remove('active');
     
     document.getElementById('nav-notes').classList.remove('active');
     document.getElementById('nav-archive').classList.add('active');
+    
+    if (document.getElementById('nav-contribute')) {
+      document.getElementById('nav-contribute').classList.remove('active');
+    }
+    
+    window.scrollTo(0, 0);
+  }
+
+  function showContribute() {
+    document.getElementById('notes-page').style.display = 'none';
+    document.getElementById('archive-page').classList.remove('active');
+    document.getElementById('contribute-page').classList.add('active');
+    
+    document.getElementById('nav-notes').classList.remove('active');
+    document.getElementById('nav-archive').classList.remove('active');
+    
+    if (document.getElementById('nav-contribute')) {
+      document.getElementById('nav-contribute').classList.add('active');
+    }
     
     window.scrollTo(0, 0);
   }
 
   // Scroll to specific article from archive
   function scrollToArticle(article) {
-    // Small delay to ensure notes page is visible
+    showNotes();
     setTimeout(() => {
       const articles = document.getElementsByTagName('article');
       if (articles.length > 0) {
@@ -1286,13 +1554,12 @@
       el.style.display = 'none';
     });
     
-    // Show notes page, hide archive
-    document.getElementById('notes-page').style.display = 'block';
-    document.getElementById('archive-page').style.display = 'none';
+    // Show notes page, hide others
+    showNotes();
     
     // Handle hash links
     if (window.location.hash === '#about') {
-      // Already handled by normal link
+      // Already handled
     }
   });
 </script>
@@ -1300,7 +1567,8 @@
 <style>
   .full-article { display: none; }
   #archive-page { display: none; }
+  #contribute-page { display: none; }
 </style>
 
 </body>
-  </html>
+</html>
