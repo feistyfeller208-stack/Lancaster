@@ -355,15 +355,21 @@
       color: #1a1a1a;
     }
 
-    /* === CONTRIBUTE PAGE === */
-    .contribute-page {
-      display: none;
-    }
-
-    .contribute-page.active {
+    /* === PAGE CONTAINERS === */
+    #notes-page {
       display: block;
     }
 
+    #archive-page, #contribute-page {
+      display: none;
+    }
+
+    /* When active class is added, show the page */
+    #archive-page.active, #contribute-page.active {
+      display: block !important;
+    }
+
+    /* === CONTRIBUTE PAGE STYLES === */
     .page-title {
       font-size: 42px;
       margin-bottom: 30px;
@@ -446,15 +452,7 @@
       margin-top: 24px;
     }
 
-    /* === ARCHIVE PAGE === */
-    .archive-page {
-      display: none;
-    }
-
-    .archive-page.active {
-      display: block;
-    }
-
+    /* === ARCHIVE PAGE STYLES === */
     .archive-list {
       list-style: none;
       margin: 40px 0;
@@ -508,11 +506,6 @@
       border-top: 1px solid #ddd6cf;
     }
 
-    /* === UTILITY === */
-    .hidden {
-      display: none !important;
-    }
-
     /* === RESPONSIVE === */
     @media (max-width: 768px) {
       .desktop-nav {
@@ -541,7 +534,7 @@
         display: none !important;
       }
     }
-  </style>
+</style>
 </head>
 <body>
 
@@ -1608,39 +1601,39 @@
 </main>
 
 <!-- ARCHIVE PAGE -->
-<div id="archive-page" class="archive-page">
-  <h2 style="font-size: 32px; margin-bottom: 30px; font-weight: 400;">Archive</h2>
+<div id="archive-page">
+  <h2 style="font-size: 42px; margin-bottom: 30px; font-weight: 400;">Archive</h2>
   
   <ul class="archive-list">
     <li>
-  <div class="archive-date">April 13, 2026</div>
-  <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('honey'); return false;">The Third Eye View on Honey</a></div>
-  <div class="archive-author">Guy Fei</div>
-</li>
-    <li>
-  <div class="archive-date">April 13, 2026</div>
-  <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('science-dislike'); return false;">The Science of Not Liking Things</a></div>
-  <div class="archive-author">Guy Fei</div>
-</li>
-    <li>
-  <div class="archive-date">March 12, 2026</div>
-  <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('menhistory'); return false;">The Men History Doesn't Forget</a></div>
-  <div class="archive-author">Guy Fei</div>
+      <div class="archive-date">April 13, 2026</div>
+      <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('honey'); return false;">The Third Eye View on Honey</a></div>
+      <div class="archive-author">Guy Fei</div>
     </li>
-<li>
-  <div class="archive-date">March 11, 2026</div>
-  <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('lateadopter'); return false;">The Late Adopter's Advantage: Why Tanzania's Technological "Delay" Might Save Us</a></div>
-  <div class="archive-author">Guy Fei</div>
-</li>
     <li>
-  <div class="archive-date">March 10, 2026</div>
-  <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('personalmba'); return false;">The Personal MBA: Why You Don't Need Business School to Understand Business</a></div>
-  <div class="archive-author">Guy Fei</div>
-</li>
+      <div class="archive-date">April 13, 2026</div>
+      <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('science-dislike'); return false;">The Science of Not Liking Things</a></div>
+      <div class="archive-author">Guy Fei</div>
+    </li>
     <li>
-  <div class="archive-date">March 8, 2026</div>
-  <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('surrealism'); return false;">Surrealism: The Art of Unlearning Reality</a></div>
-  <div class="archive-author">Guy Fei</div>
+      <div class="archive-date">March 12, 2026</div>
+      <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('menhistory'); return false;">The Men History Doesn't Forget</a></div>
+      <div class="archive-author">Guy Fei</div>
+    </li>
+    <li>
+      <div class="archive-date">March 11, 2026</div>
+      <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('lateadopter'); return false;">The Late Adopter's Advantage: Why Tanzania's Technological "Delay" Might Save Us</a></div>
+      <div class="archive-author">Guy Fei</div>
+    </li>
+    <li>
+      <div class="archive-date">March 10, 2026</div>
+      <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('personalmba'); return false;">The Personal MBA: Why You Don't Need Business School to Understand Business</a></div>
+      <div class="archive-author">Guy Fei</div>
+    </li>
+    <li>
+      <div class="archive-date">March 8, 2026</div>
+      <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('surrealism'); return false;">Surrealism: The Art of Unlearning Reality</a></div>
+      <div class="archive-author">Guy Fei</div>
     </li>
     <li>
       <div class="archive-date">March 7, 2026</div>
@@ -1672,7 +1665,7 @@
 </div>
 
 <!-- CONTRIBUTE PAGE -->
-<div id="contribute-page" class="contribute-page">
+<div id="contribute-page">
   <h2 class="page-title">CONTRIBUTE TO LANCASTER</h2>
   
   <div class="contribute-intro">
@@ -1683,7 +1676,7 @@
     <p>I'll edit lightly. Just enough to make it read clean. Your voice stays yours.</p>
   </div>
   
-  <!-- WhatsApp direct link - number hidden but functional -->
+  <!-- WhatsApp direct link -->
   <div class="contribute-box">
     <h3 style="margin-top: 0; font-size: 24px;">Send your words here</h3>
     <a href="https://wa.me/255759968552" class="whatsapp-button" target="_blank">Open WhatsApp →</a>
@@ -1807,34 +1800,37 @@
 
   function showArchive() {
     document.getElementById('notes-page').style.display = 'none';
+    document.getElementById('archive-page').style.display = 'block';
     document.getElementById('archive-page').classList.add('active');
+    document.getElementById('contribute-page').style.display = 'none';
     document.getElementById('contribute-page').classList.remove('active');
     
     document.getElementById('nav-notes').classList.remove('active');
     document.getElementById('nav-archive').classList.add('active');
     
     if (document.getElementById('nav-contribute')) {
-      document.getElementById('nav-contribute').classList.remove('active');
+        document.getElementById('nav-contribute').classList.remove('active');
     }
     
     window.scrollTo(0, 0);
-  }
+}
 
-  function showContribute() {
+function showContribute() {
     document.getElementById('notes-page').style.display = 'none';
+    document.getElementById('archive-page').style.display = 'none';
     document.getElementById('archive-page').classList.remove('active');
+    document.getElementById('contribute-page').style.display = 'block';
     document.getElementById('contribute-page').classList.add('active');
     
     document.getElementById('nav-notes').classList.remove('active');
     document.getElementById('nav-archive').classList.remove('active');
     
     if (document.getElementById('nav-contribute')) {
-      document.getElementById('nav-contribute').classList.add('active');
+        document.getElementById('nav-contribute').classList.add('active');
     }
     
     window.scrollTo(0, 0);
-  }
-
+}
   // Scroll to specific article from archive
   function scrollToArticle(article) {
     showNotes();
