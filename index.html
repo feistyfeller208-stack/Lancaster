@@ -14,94 +14,74 @@
     .site-title a { color: #1a1a1a; text-decoration: none; }
     .site-subtitle { font-size: 14px; font-style: italic; letter-spacing: 1px; color: #5a5a5a; margin-top: 8px; }
     
-    /* Auth Banner */
     .auth-banner { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #1a1a1a; color: #fcfaf7; padding: 16px 24px; border-radius: 8px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: center; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-size: 14px; }
-    .auth-banner button { background: #fcfaf7; color: #1a1a1a; border: none; padding: 8px 16px; cursor: pointer; font-family: inherit; font-size: 14px; border-radius: 4px; transition: opacity 0.2s; }
-    .auth-banner button:hover { opacity: 0.8; }
+    .auth-banner button { background: #fcfaf7; color: #1a1a1a; border: none; padding: 8px 16px; cursor: pointer; font-family: inherit; font-size: 14px; border-radius: 4px; }
     .auth-banner .email-input { padding: 8px 12px; font-family: inherit; font-size: 14px; border: none; border-radius: 4px; }
-    .user-bar { position: fixed; top: 20px; right: 20px; background: #fcfaf7; border: 1px solid #dad6d0; padding: 8px 16px; border-radius: 40px; font-size: 14px; display: flex; align-items: center; gap: 12px; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .user-bar button { background: none; border: none; cursor: pointer; font-family: inherit; font-size: 14px; color: #8a7f74; transition: color 0.2s; }
-    .user-bar button:hover { color: #1a1a1a; }
+    .user-bar { position: fixed; top: 20px; right: 20px; background: #fcfaf7; border: 1px solid #dad6d0; padding: 8px 16px; border-radius: 40px; font-size: 14px; display: flex; align-items: center; gap: 12px; z-index: 1000; }
+    .user-bar button { background: none; border: none; cursor: pointer; font-family: inherit; color: #8a7f74; }
     
-    /* Engagement */
     .engagement { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
     .like-bar { display: flex; gap: 20px; align-items: center; margin-bottom: 20px; }
-    .like-btn, .dislike-btn { background: none; border: none; font-size: 18px; cursor: pointer; padding: 4px 12px; font-family: inherit; border-radius: 20px; display: flex; align-items: center; gap: 6px; transition: background 0.2s; }
+    .like-btn, .dislike-btn { background: none; border: none; font-size: 18px; cursor: pointer; padding: 4px 12px; font-family: inherit; border-radius: 20px; display: flex; align-items: center; gap: 6px; }
     .like-btn:hover, .dislike-btn:hover { background: #f0ece6; }
     .like-btn.active, .dislike-btn.active { background: #e8e0d5; }
     .comment-section { margin-top: 20px; }
     .comment-form textarea { width: 100%; padding: 12px; font-family: inherit; border: 1px solid #ddd; background: #fff; margin-bottom: 10px; resize: vertical; }
-    .comment-form button { background: #1a1a1a; color: #fcfaf7; border: none; padding: 8px 20px; cursor: pointer; font-family: inherit; transition: opacity 0.2s; }
-    .comment-form button:hover { opacity: 0.9; }
+    .comment-form button { background: #1a1a1a; color: #fcfaf7; border: none; padding: 8px 20px; cursor: pointer; font-family: inherit; }
     .comment-list { list-style: none; }
     .comment-list li { padding: 12px 0; border-bottom: 1px solid #eee; }
     .comment-name { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
     .comment-text { font-size: 16px; }
     .comment-date { font-size: 12px; color: #aaa; margin-top: 4px; }
     
-    /* Navigation */
     .menu-toggle { display: none; position: fixed; top: 30px; right: 30px; z-index: 1000; background: none; border: none; cursor: pointer; padding: 10px; }
     .menu-toggle span { display: block; width: 30px; height: 2px; background: #1a1a1a; margin: 6px 0; transition: 0.3s; }
     .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
     .menu-toggle.active span:nth-child(2) { opacity: 0; }
     .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
-    .side-menu { position: fixed; top: 0; right: -300px; width: 280px; height: 100vh; background: #fcfaf7; border-left: 1px solid #dad6d0; padding: 100px 30px; transition: right 0.3s ease; z-index: 999; box-shadow: -2px 0 10px rgba(0,0,0,0.05); }
+    .side-menu { position: fixed; top: 0; right: -300px; width: 280px; height: 100vh; background: #fcfaf7; border-left: 1px solid #dad6d0; padding: 100px 30px; transition: right 0.3s ease; z-index: 999; }
     .side-menu.active { right: 0; }
-    .side-menu a { display: block; color: #2a2a2a; text-decoration: none; font-size: 18px; text-transform: uppercase; letter-spacing: 1.8px; padding: 15px 0; border-bottom: 1px solid #e2ddd7; transition: color 0.15s; }
-    .side-menu a:hover { color: #000; }
+    .side-menu a { display: block; color: #2a2a2a; text-decoration: none; font-size: 18px; text-transform: uppercase; letter-spacing: 1.8px; padding: 15px 0; border-bottom: 1px solid #e2ddd7; }
     .side-menu a:last-child { border-bottom: none; }
     .menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 998; }
     .menu-overlay.active { opacity: 1; visibility: visible; }
     .desktop-nav { margin: 48px 0 40px; padding-bottom: 24px; border-bottom: 1px solid #dad6d0; display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; }
-    .desktop-nav a { color: #2a2a2a; text-decoration: none; font-size: 15px; text-transform: uppercase; letter-spacing: 1.8px; padding-bottom: 6px; border-bottom: 1px solid transparent; transition: border-color 0.15s, color 0.15s; }
+    .desktop-nav a { color: #2a2a2a; text-decoration: none; font-size: 15px; text-transform: uppercase; letter-spacing: 1.8px; padding-bottom: 6px; border-bottom: 1px solid transparent; }
     .desktop-nav a:hover { color: #000; border-bottom: 1px solid #000; }
     .desktop-nav a.active { border-bottom: 1px solid #000; }
     
-    /* Article Styles */
     article { margin-bottom: 64px; border-bottom: 1px solid #e2ddd7; padding-bottom: 40px; }
-    article:last-of-type { border-bottom: none; padding-bottom: 0; }
     .article-date { font-size: 13px; text-transform: uppercase; letter-spacing: 1.2px; color: #7b6e64; margin-bottom: 12px; }
     .article-title { font-size: 36px; line-height: 1.2; margin-bottom: 24px; font-weight: 400; color: #1f1f1f; }
-    .article-excerpt { color: #2b2b2b; }
     .full-article { display: none; margin-top: 28px; padding-top: 20px; border-top: 1px dashed #cbc3b9; }
-    .read-more-btn { display: inline-block; margin-top: 20px; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: #1a1a1a; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; cursor: pointer; background: none; border: none; font-family: inherit; transition: opacity 0.2s; }
-    .read-more-btn:hover { opacity: 0.6; }
+    .read-more-btn { display: inline-block; margin-top: 20px; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: #1a1a1a; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; cursor: pointer; background: none; border: none; font-family: inherit; }
     hr { border: none; border-top: 1px solid #e0d8d0; margin: 40px 0; }
     blockquote { border-left: 3px solid #c7bcb0; padding-left: 22px; margin-left: 10px; font-style: italic; color: #3f3a35; }
     .author-line { margin-top: 40px; font-style: italic; color: #5a5a5a; text-align: right; }
     .article-share { margin-top: 30px; display: flex; align-items: center; gap: 12px; padding-top: 20px; border-top: 1px solid #eee; }
     .share-label { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #8a7f74; }
-    .share-icon { cursor: pointer; opacity: 0.7; transition: opacity 0.2s; display: inline-flex; align-items: center; justify-content: center; }
-    .share-icon:hover { opacity: 1; }
+    .share-icon { cursor: pointer; opacity: 0.7; display: inline-flex; align-items: center; justify-content: center; }
     .share-icon svg { width: 20px; height: 20px; fill: none; stroke: #1a1a1a; stroke-width: 2; }
     .footer-share { margin: 40px 0 20px; display: flex; justify-content: center; gap: 24px; }
-    .footer-share a { color: #5a5a5a; text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
-    .footer-share a:hover { color: #1a1a1a; }
+    .footer-share a { color: #5a5a5a; text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
     
-    /* Pages */
     #notes-page { display: block; }
-    #archive-page, #contribute-page { display: none; }
-    #archive-page.active, #contribute-page.active { display: block !important; }
+    #archive-page { display: none; }
+    #contribute-page { display: none; }
     .page-title { font-size: 42px; margin-bottom: 30px; font-weight: 400; }
     .contribute-box { margin: 50px 0; padding: 40px; background: #f5f0eb; border-left: 4px solid #1a1a1a; }
-    .whatsapp-button { display: inline-block; background: #1a1a1a; color: #fcfaf7; padding: 15px 30px; text-decoration: none; font-size: 18px; margin: 20px 0; transition: opacity 0.2s; }
-    .whatsapp-button:hover { opacity: 0.8; }
-    .credit-option { margin: 30px 0; padding: 20px; background: #fff; border: 1px solid #e2ddd7; }
+    .whatsapp-button { display: inline-block; background: #1a1a1a; color: #fcfaf7; padding: 15px 30px; text-decoration: none; font-size: 18px; margin: 20px 0; }
     .about-section { margin: 90px 0 40px; padding: 44px 0 36px; border-top: 2px solid #1a1a1a; border-bottom: 1px solid #ddd6cf; }
-    .about-title { font-size: 34px; font-weight: 400; margin-bottom: 24px; letter-spacing: 1px; }
+    .about-title { font-size: 34px; font-weight: 400; margin-bottom: 24px; }
     .about-text { font-size: 19px; max-width: 680px; color: #2e2e2e; }
-    .about-signature { font-size: 16px; color: #6a5f56; font-style: italic; margin-top: 24px; }
     .archive-list { list-style: none; margin: 40px 0; }
     .archive-list li { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #eee; }
-    .archive-list li:last-child { border-bottom: none; }
     .archive-date { font-size: 13px; color: #8a7f74; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
     .archive-title { font-size: 24px; margin-bottom: 8px; }
-    .archive-title a { color: #1a1a1a; text-decoration: none; transition: text-decoration 0.2s; }
-    .archive-title a:hover { text-decoration: underline; }
+    .archive-title a { color: #1a1a1a; text-decoration: none; }
     .archive-author { font-size: 15px; font-style: italic; color: #6a5f56; }
     footer { margin-top: 40px; padding-top: 28px; color: #8a7f74; font-size: 14px; text-align: center; border-top: 1px solid #ddd6cf; }
     
-    /* Responsive */
     @media (max-width: 768px) {
       .desktop-nav { display: none; }
       .menu-toggle { display: block; }
@@ -112,30 +92,22 @@
       .auth-banner { bottom: 10px; left: 10px; right: 10px; transform: none; flex-direction: column; text-align: center; }
     }
     @media (min-width: 769px) { .menu-toggle, .side-menu, .menu-overlay { display: none !important; } }
-    
-    /* Utility */
-    .full-article { display: none; }
-    #archive-page { display: none; }
-    #contribute-page { display: none; }
   </style>
 </head>
 <body>
 
-<!-- User Bar -->
 <div id="userBar" class="user-bar" style="display: none;">
   <span id="userEmail"></span>
   <button onclick="signOut()">Sign out</button>
 </div>
 
-<!-- Auth Banner -->
 <div id="authBanner" class="auth-banner" style="display: none;">
-  <span>Sign in to like, comment, and engage</span>
+  <span>Sign in to like and comment</span>
   <button onclick="signInWithGoogle()">Google</button>
   <input type="email" id="emailInput" placeholder="Your email" class="email-input">
   <button onclick="signInWithEmail()">Send magic link</button>
 </div>
 
-<!-- Hamburger Menu -->
 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 
 <div class="side-menu" id="sideMenu">
@@ -147,7 +119,6 @@
 
 <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
-<!-- Desktop Navigation -->
 <div class="desktop-nav">
   <a href="#" onclick="showNotes(); return false;" id="nav-notes" class="active">Notes</a>
   <a href="#" onclick="showArchive(); return false;" id="nav-archive">Archive</a>
@@ -160,64 +131,15 @@
   <div class="site-subtitle">A JOURNAL OF OBSERVATIONS</div>
 </header>
 
-<!-- MAIN NOTES PAGE -->
 <main id="notes-page">
-  
-  <!-- ============================================= -->
-  <!-- ARTICLES GO HERE - ADD THEM ONE BY ONE        -->
-  <!-- ============================================= -->
-  
-  <!-- EXAMPLE ARTICLE TEMPLATE (copy this for each new article) -->
-  <!--
-  <article>
-    <div class="article-date">MONTH DAY, YEAR</div>
-    <h2 class="article-title">ARTICLE TITLE</h2>
-    <div class="article-excerpt"><p>Excerpt text here...</p></div>
-    <div class="full-article" id="full-article-unique-id">
-      <p>Full article content here...</p>
-      <div class="author-line">— Guy Fei</div>
-    </div>
-    <button class="read-more-btn" onclick="toggleArticle(this, 'full-article-unique-id')">Continue reading →</button>
-    <div class="engagement" data-article-id="unique-id">
-      <div class="like-bar">
-        <button class="like-btn" data-article="unique-id">👍 <span class="like-count">0</span></button>
-        <button class="dislike-btn" data-article="unique-id">👎 <span class="dislike-count">0</span></button>
-      </div>
-      <div class="comment-section">
-        <div class="comment-list" id="comments-unique-id"></div>
-        <div class="comment-form">
-          <textarea placeholder="Add a comment..." rows="2"></textarea>
-          <button onclick="postComment('unique-id', this)">Post comment</button>
-        </div>
-      </div>
-    </div>
-    <div class="article-share">
-      <span class="share-label">Share this article</span>
-      <div class="share-icon" onclick="shareArticle('ARTICLE TITLE', 'full-article-unique-id')">
-        <svg viewBox="0 0 24 24" width="20" height="20">
-          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" stroke="currentColor" stroke-width="2" fill="none"/>
-          <polyline points="16 6 12 2 8 6" stroke="currentColor" stroke-width="2" fill="none"/>
-          <line x1="12" y1="2" x2="12" y2="15" stroke="currentColor" stroke-width="2"/>
-        </svg>
-      </div>
-    </div>
-  </article>
-  -->
-  
   <div style="padding: 40px 20px; background: #f5f0eb; margin: 40px 0; text-align: center; border-left: 4px solid #1a1a1a;">
-    <p style="font-size: 20px; margin-bottom: 10px;">✧ LANCASTER IS BEING UPDATED ✧</p>
-    <p>Articles will appear here soon. Check back or contribute your voice.</p>
-    <p style="margin-top: 20px; font-size: 14px; color: #7b6e64;">— Guy Fei</p>
+    <p style="font-size: 20px; margin-bottom: 10px;">✧ LANCASTER ✧</p>
+    <p>Articles will appear here.</p>
   </div>
 
   <section id="about" class="about-section">
     <h2 class="about-title">ABOUT LANCASTER</h2>
-    <p class="about-text">
-      Lancaster is a personal journal of observations, ideas, and fragments. 
-      No marketing. No bullshit. Just thoughts that don't fit elsewhere.
-      <br><br>
-      <em>Editor: Guy Fei</em>
-    </p>
+    <p class="about-text">Lancaster is a personal journal of observations, ideas, and fragments.<br><br><em>Editor: Guy Fei</em></p>
     <p class="about-signature">Started in 2025. Updated whenever.</p>
   </section>
 
@@ -228,12 +150,10 @@
   </div>
 </main>
 
-<!-- ARCHIVE PAGE -->
 <div id="archive-page">
   <h2 style="font-size: 42px; margin-bottom: 30px; font-weight: 400;">Archive</h2>
   <ul class="archive-list" id="archive-list">
-    <!-- Archive entries will be added here automatically via JavaScript -->
-    <li style="text-align: center; padding: 40px; color: #aaa;">No articles yet. Add some!</li>
+    <li style="text-align: center; padding: 40px; color: #aaa;">No articles yet.</li>
   </ul>
   <div class="footer-share">
     <a href="#" onclick="shareViaWhatsApp(); return false;">WhatsApp</a>
@@ -242,16 +162,10 @@
   </div>
 </div>
 
-<!-- CONTRIBUTE PAGE -->
 <div id="contribute-page">
-  <h2 class="page-title">CONTRIBUTE TO LANCASTER</h2>
-  <div class="contribute-intro">
-    <p>This journal is open to contribution.</p>
-  </div>
+  <h2 class="page-title">CONTRIBUTE</h2>
   <div class="contribute-box">
-    <h3 style="margin-top: 0; font-size: 24px;">Send your words here</h3>
     <a href="https://wa.me/255759968552" class="whatsapp-button" target="_blank">Open WhatsApp →</a>
-    <p style="font-size: 14px; color: #7b6e64; margin-top: 10px;">(Clicking the button opens WhatsApp directly)</p>
   </div>
   <div class="footer-share">
     <a href="#" onclick="shareViaWhatsApp(); return false;">WhatsApp</a>
@@ -260,54 +174,26 @@
   </div>
 </div>
 
-<footer>
-  <p>© 2026 LANCASTER · Edited by Guy Fei</p>
-</footer>
+<footer><p>© 2026 LANCASTER · Guy Fei</p></footer>
 
 <script>
-  // Supabase
   const SUPABASE_URL = 'https://gnqniyzqhezzyulnwqkg.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImducW5peXpxaGV6enl1bG53cWtnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc2ODE5OTIsImV4cCI6MjA5MzI1Nzk5Mn0.r-yxf7urmVNVNWCPI8E0N0qg7KGBF4Hxpm6T_2hZ_1I';
   const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   let currentUser = null;
-  let engagementTriggered = false;
 
-  // Article registry - ADD NEW ARTICLES HERE when you create them
   const articles = [];
 
   function registerArticle(id, title, date) {
     articles.push({ id, title, date });
-    updateArchive();
-  }
-
-  function updateArchive() {
     const archiveList = document.getElementById('archive-list');
-    if (articles.length === 0) {
-      archiveList.innerHTML = '<li style="text-align: center; padding: 40px; color: #aaa;">No articles yet. Add some!</li>';
-      return;
-    }
+    if (articles.length === 0) { archiveList.innerHTML = '<li style="text-align: center; padding: 40px; color: #aaa;">No articles yet.</li>'; return; }
     const sorted = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date));
-    archiveList.innerHTML = sorted.map(article => `
-      <li>
-        <div class="archive-date">${article.date}</div>
-        <div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('${article.id}'); return false;">${article.title}</a></div>
-        <div class="archive-author">Guy Fei</div>
-      </li>
-    `).join('');
+    archiveList.innerHTML = sorted.map(a => `<li><div class="archive-date">${a.date}</div><div class="archive-title"><a href="#" onclick="showNotes(); scrollToArticle('${a.id}'); return false;">${a.title}</a></div><div class="archive-author">Guy Fei</div></li>`).join('');
   }
 
-  function scrollToArticle(articleId) {
-    showNotes();
-    setTimeout(() => {
-      const element = document.getElementById(`full-article-${articleId}`);
-      if (element) {
-        const articleDiv = element.closest('article');
-        if (articleDiv) articleDiv.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
-  }
+  function scrollToArticle(id) { showNotes(); setTimeout(() => { const el = document.getElementById(`full-article-${id}`); if(el) el.closest('article')?.scrollIntoView({ behavior: 'smooth' }); }, 100); }
 
-  // Auth
   async function initAuth() {
     const { data: { session } } = await supabase.auth.getSession();
     if (session) {
@@ -315,125 +201,30 @@
       document.getElementById('userBar').style.display = 'flex';
       document.getElementById('userEmail').innerText = currentUser.email.split('@')[0];
       document.getElementById('authBanner').style.display = 'none';
-      loadAllEngagement();
     } else {
       currentUser = null;
-      document.getElementById('userBar').style.display = 'none';
-      setTimeout(() => { if (!currentUser && !engagementTriggered) { document.getElementById('authBanner').style.display = 'flex'; engagementTriggered = true; } }, 20000);
+      setTimeout(() => { if (!currentUser) document.getElementById('authBanner').style.display = 'flex'; }, 20000);
     }
-  }
-
-  function triggerAuthBanner() {
-    if (!currentUser && !engagementTriggered) {
-      document.getElementById('authBanner').style.display = 'flex';
-      engagementTriggered = true;
-      return false;
-    }
-    return true;
   }
 
   async function signInWithGoogle() { await supabase.auth.signInWithOAuth({ provider: 'google' }); }
-  async function signInWithEmail() { const email = document.getElementById('emailInput').value; if(email) { await supabase.auth.signInWithOtp({ email }); alert('Magic link sent to your email!'); } else alert('Enter email'); }
+  async function signInWithEmail() { const email = document.getElementById('emailInput').value; if(email) { await supabase.auth.signInWithOtp({ email }); alert('Magic link sent!'); } }
   async function signOut() { await supabase.auth.signOut(); location.reload(); }
+  supabase.auth.onAuthStateChange((e, s) => { if (s) location.reload(); });
 
-  supabase.auth.onAuthStateChange((event, session) => { if (session) location.reload(); });
+  function shareArticle(title, id) { const url = window.location.href.split('#')[0] + '#' + id; const text = `${title} — Guy Fei on LANCASTER`; if (navigator.share) navigator.share({ title, text, url }); else window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank'); }
+  function shareViaWhatsApp() { window.open(`https://wa.me/?text=${encodeURIComponent('LANCASTER ' + window.location.href.split('#')[0])}`, '_blank'); }
+  function shareViaTwitter() { window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('LANCASTER')}&url=${encodeURIComponent(window.location.href.split('#')[0])}`, '_blank'); }
+  function shareViaEmail() { window.open(`mailto:?subject=${encodeURIComponent('LANCASTER')}&body=${encodeURIComponent(window.location.href.split('#')[0])}`, '_blank'); }
 
-  // Engagement
-  async function loadAllEngagement() {
-    for (let article of articles) {
-      await loadEngagementForArticle(article.id);
-    }
-  }
-
-  async function loadEngagementForArticle(articleId) {
-    const engagementDiv = document.querySelector(`.engagement[data-article-id="${articleId}"]`);
-    if (!engagementDiv) return;
-    
-    const { data: likes } = await supabase.from('likes').select('vote_type').eq('article_id', articleId);
-    if (likes) {
-      let up = likes.filter(l => l.vote_type === 'like').length;
-      let down = likes.filter(l => l.vote_type === 'dislike').length;
-      const likeSpan = engagementDiv.querySelector('.like-count');
-      const dislikeSpan = engagementDiv.querySelector('.dislike-count');
-      if (likeSpan) likeSpan.innerText = up;
-      if (dislikeSpan) dislikeSpan.innerText = down;
-      
-      if (currentUser) {
-        const { data: userVote } = await supabase.from('likes').select('vote_type').eq('article_id', articleId).eq('user_id', currentUser.id).single();
-        if (userVote) {
-          const likeBtn = engagementDiv.querySelector('.like-btn');
-          const dislikeBtn = engagementDiv.querySelector('.dislike-btn');
-          if (userVote.vote_type === 'like') { likeBtn.classList.add('active'); dislikeBtn.classList.remove('active'); }
-          else { dislikeBtn.classList.add('active'); likeBtn.classList.remove('active'); }
-        }
-      }
-    }
-    
-    const { data: comments } = await supabase.from('comments').select('*').eq('article_id', articleId).order('created_at', { ascending: false });
-    const commentList = engagementDiv.querySelector('.comment-list');
-    if (comments && commentList) {
-      commentList.innerHTML = comments.map(c => `<li><div class="comment-name">${c.user_name}</div><div class="comment-text">${escapeHtml(c.content)}</div><div class="comment-date">${new Date(c.created_at).toLocaleDateString()}</div></li>`).join('');
-    }
-  }
-
-  function escapeHtml(text) { return text.replace(/[&<>]/g, function(m) { if (m === '&') return '&amp;'; if (m === '<') return '&lt;'; if (m === '>') return '&gt;'; return m; }); }
-
-  window.postComment = async (articleId, btn) => {
-    if (!triggerAuthBanner() && !currentUser) return;
-    const textarea = btn.previousElementSibling;
-    const content = textarea.value.trim();
-    if (!content) return;
-    const { error } = await supabase.from('comments').insert([{ article_id: articleId, user_id: currentUser.id, user_name: currentUser.email.split('@')[0], content }]);
-    if (!error) { textarea.value = ''; loadEngagementForArticle(articleId); }
-  };
-
-  // Set up like/dislike listeners dynamically
-  function setupLikeListeners() {
-    document.querySelectorAll('.like-btn, .dislike-btn').forEach(btn => {
-      btn.removeEventListener('click', handleLikeClick);
-      btn.addEventListener('click', handleLikeClick);
-    });
-  }
-
-  async function handleLikeClick(e) {
-    if (!triggerAuthBanner() && !currentUser) return;
-    const btn = e.currentTarget;
-    const engagementDiv = btn.closest('.engagement');
-    const articleId = engagementDiv.dataset.articleId;
-    const type = btn.classList.contains('like-btn') ? 'like' : 'dislike';
-    const existing = await supabase.from('likes').select('id, vote_type').eq('article_id', articleId).eq('user_id', currentUser.id).single();
-    if (existing.data) {
-      if (existing.data.vote_type === type) await supabase.from('likes').delete().eq('id', existing.data.id);
-      else await supabase.from('likes').update({ vote_type: type }).eq('id', existing.data.id);
-    } else await supabase.from('likes').insert([{ article_id: articleId, user_id: currentUser.id, vote_type: type }]);
-    loadEngagementForArticle(articleId);
-  }
-
-  // Share functions
-  function shareArticle(title, articleId) {
-    const fullUrl = window.location.href.split('#')[0] + '#' + articleId;
-    const shareText = `${title} — by Guy Fei on LANCASTER`;
-    if (navigator.share) navigator.share({ title: title, text: shareText, url: fullUrl }).catch(console.error);
-    else window.open(`https://wa.me/?text=${encodeURIComponent(shareText + ' ' + fullUrl)}`, '_blank');
-  }
-  function shareViaWhatsApp() { window.open(`https://wa.me/?text=${encodeURIComponent('LANCASTER — a journal of observations ' + window.location.href.split('#')[0])}`, '_blank'); }
-  function shareViaTwitter() { window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('LANCASTER — a journal of observations')}&url=${encodeURIComponent(window.location.href.split('#')[0])}`, '_blank'); }
-  function shareViaEmail() { window.open(`mailto:?subject=${encodeURIComponent('LANCASTER')}&body=${encodeURIComponent('Check out LANCASTER\n\n' + window.location.href.split('#')[0])}`, '_blank'); }
-
-  // Navigation
   function toggleMenu() { document.getElementById('sideMenu').classList.toggle('active'); document.getElementById('menuOverlay').classList.toggle('active'); document.getElementById('menuToggle').classList.toggle('active'); }
   function closeMenu() { document.getElementById('sideMenu').classList.remove('active'); document.getElementById('menuOverlay').classList.remove('active'); document.getElementById('menuToggle').classList.remove('active'); }
-  function showNotes() { document.getElementById('notes-page').style.display = 'block'; document.getElementById('archive-page').classList.remove('active'); document.getElementById('contribute-page').classList.remove('active'); document.getElementById('nav-notes').classList.add('active'); document.getElementById('nav-archive').classList.remove('active'); if(document.getElementById('nav-contribute')) document.getElementById('nav-contribute').classList.remove('active'); window.scrollTo(0,0); }
-  function showArchive() { document.getElementById('notes-page').style.display = 'none'; document.getElementById('archive-page').style.display = 'block'; document.getElementById('archive-page').classList.add('active'); document.getElementById('contribute-page').style.display = 'none'; document.getElementById('contribute-page').classList.remove('active'); document.getElementById('nav-notes').classList.remove('active'); document.getElementById('nav-archive').classList.add('active'); if(document.getElementById('nav-contribute')) document.getElementById('nav-contribute').classList.remove('active'); window.scrollTo(0,0); }
-  function showContribute() { document.getElementById('notes-page').style.display = 'none'; document.getElementById('archive-page').style.display = 'none'; document.getElementById('archive-page').classList.remove('active'); document.getElementById('contribute-page').style.display = 'block'; document.getElementById('contribute-page').classList.add('active'); document.getElementById('nav-notes').classList.remove('active'); document.getElementById('nav-archive').classList.remove('active'); if(document.getElementById('nav-contribute')) document.getElementById('nav-contribute').classList.add('active'); window.scrollTo(0,0); }
-  function toggleArticle(btn, fullArticleId) { const fullDiv = document.getElementById(fullArticleId); if (fullDiv.style.display === "none" || fullDiv.style.display === "") { fullDiv.style.display = "block"; btn.textContent = "Read less ↑"; } else { fullDiv.style.display = "none"; btn.textContent = "Continue reading →"; } }
+  function showNotes() { document.getElementById('notes-page').style.display = 'block'; document.getElementById('archive-page').style.display = 'none'; document.getElementById('contribute-page').style.display = 'none'; document.getElementById('nav-notes').classList.add('active'); document.getElementById('nav-archive').classList.remove('active'); document.getElementById('nav-contribute').classList.remove('active'); window.scrollTo(0,0); }
+  function showArchive() { document.getElementById('notes-page').style.display = 'none'; document.getElementById('archive-page').style.display = 'block'; document.getElementById('contribute-page').style.display = 'none'; document.getElementById('nav-notes').classList.remove('active'); document.getElementById('nav-archive').classList.add('active'); document.getElementById('nav-contribute').classList.remove('active'); window.scrollTo(0,0); }
+  function showContribute() { document.getElementById('notes-page').style.display = 'none'; document.getElementById('archive-page').style.display = 'none'; document.getElementById('contribute-page').style.display = 'block'; document.getElementById('nav-notes').classList.remove('active'); document.getElementById('nav-archive').classList.remove('active'); document.getElementById('nav-contribute').classList.add('active'); window.scrollTo(0,0); }
+  function toggleArticle(btn, id) { const div = document.getElementById(id); if (div.style.display === 'none' || div.style.display === '') { div.style.display = 'block'; btn.textContent = 'Read less ↑'; } else { div.style.display = 'none'; btn.textContent = 'Continue reading →'; } }
 
-  window.addEventListener('DOMContentLoaded', () => { 
-    document.querySelectorAll('.full-article').forEach(el => el.style.display = 'none'); 
-    showNotes(); 
-    initAuth(); 
-    setupLikeListeners();
-  });
+  window.addEventListener('DOMContentLoaded', () => { document.querySelectorAll('.full-article').forEach(el => el.style.display = 'none'); showNotes(); initAuth(); });
 </script>
 </body>
 </html>
